@@ -1,8 +1,10 @@
 import React from 'react'
 import { useGlobalInventory } from '../contexts/inventoryManagementContext'
+import { useNavigate } from 'react-router-dom'
 
 const ProductTable = ({ products }) => {
     const { filteredData } = useGlobalInventory()
+    const navigate = useNavigate()
 
     const textShortener = (text) => {
         return text.length > 20 ? `${text.slice(0, 20)}...` : text;
@@ -26,7 +28,7 @@ const ProductTable = ({ products }) => {
                                 <td>
                                     <img src={imageUrl} alt="" className='w-40' />
                                 </td>
-                                <td className='text-blue-600 hover:underline cursor-pointer'>{name}</td>
+                                <td onClick={() => navigate(`/products-details/${id}`)} className='text-blue-600 hover:underline cursor-pointer'>{name}</td>
                                 <td>{textShortener(description)}</td>
                                 <td>${price}</td>
                                 <td>{stock}</td>

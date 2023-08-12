@@ -34,6 +34,10 @@ const InventoryManagementContextProvider = ({ children }) => {
         return acc;
     }, []);
 
+    const findProduct = (id) => {
+        return allInventoryData.find(product => product.id === id)
+    }
+
     const addNewProduct = (product) => {
         setAllInventoryData(prev => [{ id: uuid(), ...product }, ...prev])
         alert('Product Added Successfully!')
@@ -54,7 +58,7 @@ const InventoryManagementContextProvider = ({ children }) => {
 
 
     return (
-        <inventoryManagementContext.Provider value={{ allInventoryData, totalStock, totalDeleverd, lowStockItem, allDetartments, allInventoryData, addNewProduct, setSelectedDepartmentFilter, filteredData, setSortBy, setIsLowStockItem, selectedDepartmentFilter }}>
+        <inventoryManagementContext.Provider value={{ allInventoryData, totalStock, totalDeleverd, lowStockItem, allDetartments, allInventoryData, addNewProduct, setSelectedDepartmentFilter, filteredData, setSortBy, setIsLowStockItem, selectedDepartmentFilter, findProduct }}>
             {children}
         </inventoryManagementContext.Provider>
     )
