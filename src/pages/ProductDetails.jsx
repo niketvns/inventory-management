@@ -12,13 +12,13 @@ const ProductDetails = () => {
         <div className='p-10 flex flex-col gap-2'>
             <h1 className='text-2xl font-semibold'>{name}</h1>
             <img src={imageUrl} alt="image-details" className='w-60' />
-            <p>Price: ${price}</p>
-            <p>Stock: {stock}</p>
-            <p>SKU: {sku}</p>
-            <p>Supplier: {supplier}</p>
-            <p>Delivered: {delivered}</p>
-            <p>Description: {description}</p>
-            <p>Department: {department}</p>
+            <p><b>Price:</b> ${price}</p>
+            <p><b>Stock:</b> {stock}</p>
+            <p><b>SKU:</b> {sku}</p>
+            <p><b>Supplier:</b> {supplier}</p>
+            <p><b>Delivered:</b> {delivered}</p>
+            <p><b>Description:</b> {description}</p>
+            <p><b>Department:</b> {department}</p>
         </div>
     )
 }
